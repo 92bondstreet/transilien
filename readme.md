@@ -6,7 +6,7 @@
 
 Get the status (`ok` or `ko`) of the railways traffic according Lines.
 
-### Schema example
+### Status Schema
 
 ```
 {
@@ -14,13 +14,16 @@ Get the status (`ok` or `ko`) of the railways traffic according Lines.
 	"type": "object",
 	"properties": {
 		"line": {
-			"type": "string"
+			"type": "string",
+			"description": "Code line"
 		},
 		"status": {
-			"type": "string"
+			"type": "string",
+			"description": "Traffic status"
 		},
     "message": {
-      "type": "string"
+      "type": "string",
+			"description": "Traffic message"
     }
 	},
 	"required": ["line", "status", "message"]
@@ -35,4 +38,46 @@ Get the status (`ok` or `ko`) of the railways traffic according Lines.
   "status": "ok",
   "message": "Trafic normal"
 }
+```
+
+## Methods
+
+```
+transilien.lignes([code],callback)
+```
+
+With
+
+* `code`, optional, array containing list of Lines code
+* `callback` with error return and Lines traffic status results.
+
+
+Callback receives `(error, response)`.
+
+## Usage
+
+```
+var transilien = require('transilien');
+
+// Get traffic status for all Lines
+transilien.lignes(callback);
+
+// Get traffic status for Lines L and U
+transilien.lignes(["L","U"],callback);
+
+```
+
+### Callback results example
+
+```
+[{
+	"line": "L",
+	"status": "ok",
+	"message": "Trafic normal"
+},
+{
+	"line": "N",
+	"status": "nok",
+	"message": "Ligne N : retards Paris Montparnasse - Dreux"
+}]
 ```
