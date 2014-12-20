@@ -1,0 +1,28 @@
+{
+  "name": "transilien",
+  "version": "1.0.0",
+  "description": "Get the status (ok or ko) of the railways traffic according Lines.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test/transilien.spec.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/92bondstreet/transilien.git"
+  },
+  "author": "Yassine AZZOUT <yassine.azzout@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/92bondstreet/transilien/issues"
+  },
+  "homepage": "https://github.com/92bondstreet/transilien",
+  "keywords": [
+    "transilien",
+    "train",
+    "paris"
+  ],
+  "dependencies": {
+    "chai": "^1.10.0",
+    "mocha": "^2.0.1"
+  }
+}
