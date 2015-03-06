@@ -2,27 +2,40 @@
   "name": "transilien",
   "version": "1.0.0",
   "description": "Get the status (ok or ko) of the railways traffic according Lines.",
-  "main": "index.js",
-  "scripts": {
-    "test": "mocha test/transilien.spec.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/92bondstreet/transilien.git"
-  },
-  "author": "Yassine AZZOUT <yassine.azzout@gmail.com",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/92bondstreet/transilien/issues"
-  },
   "homepage": "https://github.com/92bondstreet/transilien",
+  "author": {
+    "name": "Yassine AZZOUT",
+    "email": "yassine.azzout@gmail.com",
+    "url": "yass.io"
+  },
+  "repository": "92bondstreet/transilien2",
+  "license": "MIT",
+  "files": [
+    "index.js",
+    "./bin/cli.js"
+  ],
   "keywords": [
     "transilien",
-    "train",
+    "trains",
     "paris"
   ],
   "dependencies": {
-    "chai": "^1.10.0",
-    "mocha": "^2.0.1"
+    "meow": "^2.0.0"
+  },
+  "devDependencies": {
+    "chai": "^2.1.1",
+    "grunt-cli": "^0.1.13",
+    "grunt-contrib-nodeunit": "^0.4.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-eslint": "^6.0.0",
+    "grunt-mocha-cli": "^1.11.0",
+    "load-grunt-tasks": "^1.0.0",
+    "time-grunt": "^1.0.0"
+  },
+  "scripts": {
+    "test": "grunt"
+  },
+  "bin": {
+    "transilien2": "cli.js"
   }
 }

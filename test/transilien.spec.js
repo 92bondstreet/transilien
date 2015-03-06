@@ -3,7 +3,7 @@
 'use strict';
 
 var expect = require('chai').expect;
-var transilien = require('../lib/transilien');
+var transilien = require('../index');
 
 var options = {'url': 'http://www.transilien.com/itineraire/ligne/init?codeLigne='};
 
@@ -87,7 +87,7 @@ describe('require transilien', function(){
           }
           expect(status).to.have.length(2);
 
-          for(var message in status){
+          for (var message in status){
             expect(message).to.have.property('line');
             expect(message).to.have.property('message');
             expect(message).to.have.property('status');
